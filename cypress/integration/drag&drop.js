@@ -13,4 +13,4 @@ describe('Cypress 101 assignment: Test Scenerio 1', () => {
         cy.get('#rangeSuccess').invoke('val', '95').trigger('change')
         cy.get('#rangeSuccess').should('have.text', '95')
     })
-  })
+  });
