@@ -25,5 +25,4 @@ For any other editor of choice make sure you config below dependencies yourself
 ## The above code will upload the test in Lambda cloud where the result can be viewed directly.
 
 # Test Structure
-    drag&drop.js = It covers the Test Scenario 1
-    submitForm.js = It covers the Test Scenario 2 
+    cypress101.js = It covers the Test Scenario 1 and Test Scenario 2 
