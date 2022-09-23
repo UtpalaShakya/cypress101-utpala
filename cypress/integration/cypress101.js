@@ -4,8 +4,23 @@ import { lighthouseConfig, threshold } from "../fixtures/lighhouseOptions"
 import { terminalLog } from "../support/commands"
 
 
+describe('Cypress 101 assignment: Test Scenerio 1', () => {
+
+  beforeEach(() => {
+      cy.visit('https://www.lambdatest.com/selenium-playground/input-form-demo')  
+  })
+  it('drag and drop sliders', () => {
+      cy.url().should('include', 'selenium-playground/input-form-demo')
+      cy.get('P[class="inline-block"]').eq(3).click()
+      cy.contains('Drag & Drop Sliders').click()
+      cy.get('input[type=range]').invoke('val', '95')
+      cy.get('#rangeSuccess').invoke('val', '95').trigger('change')
+      cy.get('#rangeSuccess').should('have.text', '95')
+  })
+});
+
 describe('Cypress 101 assignment: Test Scenerio 2', () => {
-  before(() => {
+  beforeEach(() => {
       cy.visit('https://www.lambdatest.com/selenium-playground/input-form-demo')
       cy.viewport('samsung-note9')
       cy.contains('Input Forms').click().should('be.visible')
