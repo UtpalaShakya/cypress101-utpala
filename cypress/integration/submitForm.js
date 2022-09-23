@@ -1,18 +1,21 @@
 /// <reference types="cypress" />
+import {A11YOptions } from "../fixtures/accessibilityOptions"
+import { lighthouseConfig, threshold } from "../fixtures/lighhouseOptions"
 import { terminalLog } from "../support/commands"
+
 
 describe('Cypress 101 assignment: Test Scenerio 2', () => {
   before(() => {
       cy.visit('https://www.lambdatest.com/selenium-playground/input-form-demo')
       cy.viewport('samsung-note9')
       cy.contains('Input Forms').click().should('be.visible')
-      cy.contains('Input Form Submit').click({force: true})
-      cy.injectAxe()
+      cy.contains('Input Form Submit').click({force: true})  
 
     })
 
     it('verify form accessibility using cypress-axe', () => {
-        cy.checkA11y('.loginform', terminalLog)
+        cy.injectAxe()
+        cy.checkA11y('.loginform',A11YOptions, terminalLog)
     })
 
     it('performance metrics of the submission page using lighthouse command', () => {
@@ -27,23 +30,9 @@ describe('Cypress 101 assignment: Test Scenerio 2', () => {
         cy.get('#inputState').type('kathmandu')
         cy.get('#inputZip').type('44600')
         cy.get('.btn').click()
-    
-        cy.get('.success-msg').should('have.text', 'Thanks for contacting us, we will get back to you shortly.')
-
-        const threshold = {
-            performance: 55,
-            accessibility: 90,
-            "best-practices": 80,
-            seo: 80,
-        };
-    
-        const lighthouseConfig = {
-            formfactor: "mobile",
-            screenEmulation: {
-                disabled: true,
-            }
-        }
 
         cy.lighthouse(threshold, lighthouseConfig)
+
+        cy.get('.success-msg').should('have.text', 'Thanks for contacting us, we will get back to you shortly.')
    })
 })

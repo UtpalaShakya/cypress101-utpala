@@ -1,7 +1,7 @@
 {
    "lambdatest_auth": {
-      "username": "utpala",
-      "access_key": "Fzvz7Bs9WNc2BrHrLgE3TV7BJikBQz8ZRBR3UzGwV9FyqlmFNT"
+      "username": "shakya.utpalaa",
+      "access_key": "JVON6RX3FNZyoTqmz0IqFb7BelO88JhcVo9cLRl4nnJs8mnmhc"
    },
    "browsers": [
       {
@@ -20,16 +20,23 @@
       }
    ],
    "run_settings": {
-      "cypress_config_file": "cypress.config.js",
+      "cypress_config_file": "cypress.json",
       "reporter_config_file": "base_reporter_config.json",
       "build_name": "cypress101-assignment",
       "parallels": 2,
-      "specs": "./cypress/integration/submitForm.js",
+      "specs": "./cypress/integration/*.js",
       "ignore_files": "",
       "network": false,
       "headless": false,
       "npm_dependencies": {
-         "cypress": "10.0.0"
+         "@cypress-audit/lighthouse": "^1.3.1",
+         "axe-core": "^4.4.3",
+         "cypress": "^9.7.0",
+         "cypress-audit": "^1.1.0",
+         "cypress-axe": "^0.14.0",
+         "cypress-xpath": "^2.0.1",
+         "lambdatest-cypress-cli": "^2.5.4"
+         
       }
    },
    "tunnel_settings": {
