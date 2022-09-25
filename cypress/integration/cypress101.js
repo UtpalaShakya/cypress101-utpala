@@ -7,7 +7,7 @@ import { terminalLog } from "../support/commands"
 describe('Cypress 101 assignment: Test Scenerio 1', () => {
 
   beforeEach(() => {
-      cy.visit('https://www.lambdatest.com/selenium-playground/input-form-demo')  
+      cy.visit('/selenium-playground/input-form-demo')  
   })
   it('drag and drop sliders', () => {
       cy.url().should('include', 'selenium-playground/input-form-demo')
@@ -21,7 +21,6 @@ describe('Cypress 101 assignment: Test Scenerio 1', () => {
 
 describe('Cypress 101 assignment: Test Scenerio 2', () => {
   beforeEach(() => {
-      cy.visit('https://www.lambdatest.com/selenium-playground/input-form-demo')
       cy.viewport('samsung-note9')
       cy.contains('Input Forms').click().should('be.visible')
       cy.contains('Input Form Submit').click({force: true})  
