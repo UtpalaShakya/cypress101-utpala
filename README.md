@@ -28,3 +28,15 @@ For any other editor of choice make sure you config below dependencies yourself
 
 # Test Structure
     cypress101.js = It covers the Test Scenario 1 and Test Scenario 2 
+
+# Create Gitpod workspace
+     https://gitpod.io/#<your repo url>
+ 
+ # Configure Gitpod environment to install required dependencies
+     create .gitpod.yml file and specify to use .gitpod.Dockerfile as Dockerfile. Then, add dependencies and push the changes.
+
+# ADd cypress as a dev dependency after initializing the npm package
+     npm install cypress --save-dev
+     Then run the test.
+
+
