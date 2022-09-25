@@ -3,14 +3,8 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 image:
-  file: .gitpod.Dockerfile
-
-
-# Commands to start on workspace startup
+    file: .gitpod.Dockerfile
 tasks:
-  - init: npm install
+  - before: npm install -g lambdatest-cypress-cli 
+    init: echo "lambda cypress cli added"
     command: lambdatest-cypress run
-# Ports to expose on workspace startup
-ports:
-  - port: 8000
-    onOpen: open-preview
